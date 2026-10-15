@@ -1,0 +1,112 @@
+{
+  "record_date": "2026-10-15",
+  "source_project": "WaferInspectionPlatform_R01",
+  "source_files": [
+    {
+      "path": "reports/comparison.json",
+      "sha256": "d7e0be759c4ddd54000a55062fcd4c59a20408b530ab20ad0df777047f6e9a2f"
+    },
+    {
+      "path": "reports/current_preflight.json",
+      "sha256": "d387c58d87d6843593a157d8e792a0a53d4a1e3596ad35da688a586a38be5042"
+    },
+    {
+      "path": "reports/training_status.json",
+      "sha256": "390590f73a3c86a7a164e78767339b6e5687dbcde2424a3e13153f4bfb1a3ad5"
+    },
+    {
+      "path": "models/registry.json",
+      "sha256": "04c3e629b751d2e402f204af6653599f86bb991b7aac80c79cea228b3cc8532a"
+    },
+    {
+      "path": "hardware/DESIGN_STATE.json",
+      "sha256": "0e2c6edb86a03aa6498a60a3d139f1165d020fe21c076818ba8f5a13158536f1"
+    }
+  ],
+  "summary_kind": "Selected fields from saved records; no new training or evaluation was run.",
+  "evaluation": {
+    "status": "PUBLIC_IMAGE_DEVELOPMENT_EVALUATED",
+    "utc": "2026-09-30T05:18:16.531782+00:00",
+    "run_id": "finetune_20260930T050337_5ep",
+    "epochs": 5,
+    "default_model": "finetuned",
+    "selection_basis": "validation mAP50-95 only",
+    "test_delta_map50_points": 3.0070643931898733,
+    "test_delta_map50_95_points": 1.2354893978434978,
+    "holdout_note": "Previously examined R01 test split; development evaluation, not untouched external test",
+    "physical_device_validated": false,
+    "normal_only_false_alarm_validated": false
+  },
+  "models": {
+    "baseline": {
+      "sha256": "c92e701e065a35d8777689bb3c025a57940c70749afb18198132b865a5e4ee29",
+      "validation": {
+        "bbox_map50": 0.719310032076252,
+        "bbox_map50_95": 0.3539152301218608
+      },
+      "test": {
+        "bbox_map50": 0.7373469699131436,
+        "bbox_map50_95": 0.36423598562281945
+      }
+    },
+    "finetuned": {
+      "sha256": "13763ba88c6c17bca12ab31aadbe86e8e8ffb707f0cf3f6f4d5f486e8a802592",
+      "validation": {
+        "bbox_map50": 0.723987903723564,
+        "bbox_map50_95": 0.3656207648903065
+      },
+      "test": {
+        "bbox_map50": 0.7674176138450424,
+        "bbox_map50_95": 0.3765908796012544
+      }
+    }
+  },
+  "data_counts": {
+    "train": {
+      "images": 1472,
+      "boxes": 2418,
+      "class_boxes": {
+        "edge_bite": 226,
+        "gray_line": 102,
+        "open": 172,
+        "scratch": 628,
+        "short_circuit": 383,
+        "stains_enbedded": 907
+      }
+    },
+    "val": {
+      "images": 275,
+      "boxes": 480,
+      "class_boxes": {
+        "edge_bite": 40,
+        "gray_line": 27,
+        "open": 27,
+        "scratch": 132,
+        "short_circuit": 84,
+        "stains_enbedded": 170
+      }
+    },
+    "test": {
+      "images": 287,
+      "boxes": 496,
+      "class_boxes": {
+        "edge_bite": 40,
+        "gray_line": 25,
+        "open": 38,
+        "scratch": 144,
+        "short_circuit": 72,
+        "stains_enbedded": 177
+      }
+    }
+  },
+  "physical_wafer_lot_independence": "NOT_VERIFIED",
+  "classes": [
+    "edge_bite",
+    "gray_line",
+    "open",
+    "scratch",
+    "short_circuit",
+    "stains_enbedded"
+  ],
+  "cleanliness_metrics": "Not implemented in the inspected source; particle-count, area and acceptance criteria are planned work."
+}
