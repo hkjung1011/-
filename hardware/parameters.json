@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.0",
+  "revision": "WIP-HW-R01",
+  "date": "2026-09-30",
+  "maturity": "PRELIMINARY_NOT_FABRICATION",
+  "authority": "User requested camera, lighting and conveyance real device design; wafer size, smallest defect and camera selection pending.",
+  "frame": {
+    "origin": "nominal wafer center at scan center",
+    "x": "wafer horizontal scan",
+    "y": "wafer vertical scan",
+    "z": "up normal to wafer",
+    "unit": "mm",
+    "status": "CONCEPT_ONLY_NOT_FUSION_FRAME"
+  },
+  "parameters": [
+    {
+      "name": "P_WaferDiameter_mm",
+      "value": 100,
+      "unit": "mm",
+      "status": "ASSUMED",
+      "source": "Editable example, not a user specification"
+    },
+    {
+      "name": "P_WaferThickness_mm",
+      "value": null,
+      "unit": "mm",
+      "status": "TO_VERIFY",
+      "source": "Required before carrier contact/groove design"
+    },
+    {
+      "name": "P_MinDefect_um",
+      "value": 50,
+      "unit": "um",
+      "status": "ASSUMED",
+      "source": "Illustrative scratch/particle feature width, not detection guarantee"
+    },
+    {
+      "name": "P_ImageWidth_px",
+      "value": 2448,
+      "unit": "px",
+      "status": "CONFIRMED_CANDIDATE_SPEC",
+      "source": "https://docs.baslerweb.com/aca2440-35um"
+    },
+    {
+      "name": "P_ImageHeight_px",
+      "value": 2048,
+      "unit": "px",
+      "status": "CONFIRMED_CANDIDATE_SPEC",
+      "source": "https://docs.baslerweb.com/aca2440-35um"
+    },
+    {
+      "name": "P_PixelPitch_um",
+      "value": 3.45,
+      "unit": "um",
+      "status": "CONFIRMED_CANDIDATE_SPEC",
+      "source": "https://docs.baslerweb.com/aca2440-35um"
+    },
+    {
+      "name": "P_FeatureSampling_px",
+      "value": 5,
+      "unit": "px",
+      "status": "ASSUMED",
+      "source": "Engineering screening criterion to be validated with real defects"
+    },
+    {
+      "name": "P_CoverageDiameterRatio",
+      "value": 1.1,
+      "unit": "ratio",
+      "status": "ASSUMED",
+      "source": "10% image coverage margin"
+    },
+    {
+      "name": "P_TileFOVWidth_mm",
+      "value": 20,
+      "unit": "mm",
+      "status": "ASSUMED",
+      "source": "Target measured FOV; exact lens and WD pending"
+    },
+    {
+      "name": "P_TileOverlap_ratio",
+      "value": 0.1,
+      "unit": "ratio",
+      "status": "ASSUMED",
+      "source": "Optical tile overlap; registration performance pending"
+    },
+    {
+      "name": "P_InferencePatch_px",
+      "value": 1024,
+      "unit": "px",
+      "status": "ASSUMED",
+      "source": "Native-resolution crop; no 2448->1024 full-frame downsample"
+    },
+    {
+      "name": "P_InferencePatchOverlap_ratio",
+      "value": 0.2,
+      "unit": "ratio",
+      "status": "ASSUMED",
+      "source": "Boundary coverage; validate patch duplication/NMS"
+    },
+    {
+      "name": "P_StageTravelX_mm",
+      "value": 120,
+      "unit": "mm",
+      "status": "ASSUMED",
+      "source": "Functional target; candidate 152.4 mm stage not yet selected"
+    },
+    {
+      "name": "P_StageTravelY_mm",
+      "value": 120,
+      "unit": "mm",
+      "status": "ASSUMED",
+      "source": "Functional target; candidate 152.4 mm stage not yet selected"
+    },
+    {
+      "name": "P_CarrierEnvelopeDiameter_mm",
+      "value": 120,
+      "unit": "mm",
+      "status": "ASSUMED",
+      "source": "Packaging envelope only, no finalized contact surfaces"
+    },
+    {
+      "name": "P_BaseWidth_mm",
+      "value": 400,
+      "unit": "mm",
+      "status": "ASSUMED",
+      "source": "Space reservation, not supplier-dimension packaging verification"
+    },
+    {
+      "name": "P_BaseDepth_mm",
+      "value": 350,
+      "unit": "mm",
+      "status": "ASSUMED",
+      "source": "Space reservation, not supplier-dimension packaging verification"
+    },
+    {
+      "name": "P_EnclosureHeight_mm",
+      "value": 450,
+      "unit": "mm",
+      "status": "ASSUMED",
+      "source": "Space reservation, exact optics stack pending"
+    },
+    {
+      "name": "P_WorkingDistance_mm",
+      "value": 80,
+      "unit": "mm",
+      "status": "ASSUMED",
+      "source": "Illustrative lens-front to wafer gap; measure after lens selection"
+    },
+    {
+      "name": "P_ZAdjustmentTravel_mm",
+      "value": 50,
+      "unit": "mm",
+      "status": "ASSUMED",
+      "source": "Manual optics adjustment target"
+    },
+    {
+      "name": "P_ScanSpeed_mms",
+      "value": 10,
+      "unit": "mm/s",
+      "status": "ASSUMED",
+      "source": "Stop-and-capture timing illustration"
+    },
+    {
+      "name": "P_SettleTime_ms",
+      "value": 250,
+      "unit": "ms",
+      "status": "ASSUMED",
+      "source": "Must be determined from vibration/focus measurements"
+    }
+  ],
+  "calculations": [
+    {
+      "wafer_diameter_mm": 100,
+      "coverage_bbox_mm": 110.00000000000001,
+      "fullwafer_fov_short_mm": 110.00000000000001,
+      "fullwafer_sampling_um_per_pixel": 53.71093750000001,
+      "fullwafer_5px_feature_um": 268.5546875,
+      "tile_fov_x_mm": 20,
+      "tile_fov_y_mm": 16.73202614379085,
+      "tile_sampling_um_per_pixel": 8.169934640522877,
+      "tile_5px_feature_um": 40.84967320261438,
+      "tile_5px_feature_after_fullframe_1024_resize_um": 97.65625,
+      "tiles_x": 6,
+      "tiles_y": 8,
+      "tile_count_rectangular": 48,
+      "required_tile_center_travel_x_mm": 90.0,
+      "required_tile_center_travel_y_mm": 105.41176470588236,
+      "serpentine_path_mm": 825.4117647058823,
+      "cycle_lower_bound_s_assumed_10mms_350ms_overhead": 99.34117647058822
+    },
+    {
+      "wafer_diameter_mm": 150,
+      "coverage_bbox_mm": 165.0,
+      "fullwafer_fov_short_mm": 165.0,
+      "fullwafer_sampling_um_per_pixel": 80.56640625,
+      "fullwafer_5px_feature_um": 402.83203125000006,
+      "tile_fov_x_mm": 20,
+      "tile_fov_y_mm": 16.73202614379085,
+      "tile_sampling_um_per_pixel": 8.169934640522877,
+      "tile_5px_feature_um": 40.84967320261438,
+      "tile_5px_feature_after_fullframe_1024_resize_um": 97.65625,
+      "tiles_x": 10,
+      "tiles_y": 11,
+      "tile_count_rectangular": 110,
+      "required_tile_center_travel_x_mm": 162.0,
+      "required_tile_center_travel_y_mm": 150.58823529411765,
+      "serpentine_path_mm": 1932.5882352941176,
+      "cycle_lower_bound_s_assumed_10mms_350ms_overhead": 231.75882352941176
+    },
+    {
+      "wafer_diameter_mm": 200,
+      "coverage_bbox_mm": 220.00000000000003,
+      "fullwafer_fov_short_mm": 220.00000000000003,
+      "fullwafer_sampling_um_per_pixel": 107.42187500000001,
+      "fullwafer_5px_feature_um": 537.109375,
+      "tile_fov_x_mm": 20,
+      "tile_fov_y_mm": 16.73202614379085,
+      "tile_sampling_um_per_pixel": 8.169934640522877,
+      "tile_5px_feature_um": 40.84967320261438,
+      "tile_5px_feature_after_fullframe_1024_resize_um": 97.65625,
+      "tiles_x": 13,
+      "tiles_y": 15,
+      "tile_count_rectangular": 195,
+      "required_tile_center_travel_x_mm": 216.0,
+      "required_tile_center_travel_y_mm": 210.82352941176472,
+      "serpentine_path_mm": 3450.823529411765,
+      "cycle_lower_bound_s_assumed_10mms_350ms_overhead": 413.3323529411765
+    },
+    {
+      "wafer_diameter_mm": 300,
+      "coverage_bbox_mm": 330.0,
+      "fullwafer_fov_short_mm": 330.0,
+      "fullwafer_sampling_um_per_pixel": 161.1328125,
+      "fullwafer_5px_feature_um": 805.6640625000001,
+      "tile_fov_x_mm": 20,
+      "tile_fov_y_mm": 16.73202614379085,
+      "tile_sampling_um_per_pixel": 8.169934640522877,
+      "tile_5px_feature_um": 40.84967320261438,
+      "tile_5px_feature_after_fullframe_1024_resize_um": 97.65625,
+      "tiles_x": 19,
+      "tiles_y": 22,
+      "tile_count_rectangular": 418,
+      "required_tile_center_travel_x_mm": 324.0,
+      "required_tile_center_travel_y_mm": 316.2352941176471,
+      "serpentine_path_mm": 7444.235294117647,
+      "cycle_lower_bound_s_assumed_10mms_350ms_overhead": 890.7235294117646
+    }
+  ],
+  "sampling_notes": [
+    "Whole circular wafer must fit the shorter image axis; calculations use 2048 px with a 10% diameter margin.",
+    "5 pixels is a preliminary sampling criterion, not a universal detectability or optical MTF guarantee.",
+    "20 mm/2448 gives 8.1699 um/pixel. A 50 um feature spans 6.12 raw pixels but only 2.56 pixels after full-frame resizing to 1024.",
+    "Native 1024 px crops preserve raw sampling. Minimum lens MTF, depth of field, contrast and exposure need target tests.",
+    "Rectangular raster counts include empty corner tiles. Circle masks may reduce count only after coverage proof.",
+    "100 mm example requires 90 x 105.41 mm tile-center travel; 100 mm stage is insufficient for the Y example.",
+    "Cycle values are lower bounds from path/speed and assumed capture overhead; acceleration, communications, inference, focus and loading are excluded."
+  ],
+  "parts_maturity": "All structural drawings are envelopes. No STEP/F3D produced; no joint, clearance or strength PASS claimed."
+}

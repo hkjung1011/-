@@ -1,0 +1,11 @@
+fastapi==0.142.1
+uvicorn==0.54.0
+python-multipart==0.0.32
+httpx==0.28.1
+Pillow==12.3.0
+numpy==2.4.6
+PyYAML==6.0.3
+ultralytics==8.4.120
+opencv-python==5.0.0.93
+torch==2.12.1
+torchvision==0.27.1

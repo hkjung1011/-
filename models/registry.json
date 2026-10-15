@@ -1,0 +1,7 @@
+{
+  "default_model": "finetuned",
+  "baseline_sha256": "c92e701e065a35d8777689bb3c025a57940c70749afb18198132b865a5e4ee29",
+  "finetuned_sha256": "13763ba88c6c17bca12ab31aadbe86e8e8ffb707f0cf3f6f4d5f486e8a802592",
+  "run_id": "finetune_20260930T050337_5ep",
+  "selected_on": "validation only"
+}

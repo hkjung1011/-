@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+runtime/
+data/
+downloads/
+audit/
+models/*.pt
+runs/
+reports/*
+!reports/README.md
+graphify-out/
+*.lock
+.env
+.env.*

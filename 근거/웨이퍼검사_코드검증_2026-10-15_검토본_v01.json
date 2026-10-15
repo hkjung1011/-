@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-15",
+  "source_project": "WaferInspectionPlatform_R01",
+  "original_source_preserved": true,
+  "checks": {
+    "unittest": {
+      "run": 21,
+      "passed": 20,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "skip_reason": "Actual model unittest is opt-in; no model/data copied into the repository."
+    },
+    "cpu_smoke": {
+      "input": "Synthetic gray PNG, 1280x1024",
+      "cases": [
+        {
+          "model": "baseline",
+          "mode": "full_frame",
+          "status": "PASS"
+        },
+        {
+          "model": "finetuned",
+          "mode": "tile_prototype",
+          "status": "PASS"
+        }
+      ],
+      "verified": [
+        "inference response",
+        "annotated image URL",
+        "input image URL",
+        "two history records",
+        "original model hashes unchanged"
+      ]
+    },
+    "dependencies": "All 11 pinned requirements match the existing Python 3.11 environment; CUDA PyTorch builds were used for CPU inference. CPU installation wheel availability checked; no clean environment installation run.",
+    "syntax": "7 Python files and 2 PowerShell scripts parsed successfully."
+  },
+  "not_executed": [
+    "package installation into a fresh environment",
+    "training",
+    "camera capture",
+    "physical wafer inspection",
+    "motion control"
+  ],
+  "model_sha256": {
+    "baseline": "c92e701e065a35d8777689bb3c025a57940c70749afb18198132b865a5e4ee29",
+    "finetuned": "13763ba88c6c17bca12ab31aadbe86e8e8ffb707f0cf3f6f4d5f486e8a802592"
+  },
+  "code_sha256": {
+    "app.py": "9799473c2e8fb7a1970a477de769088711e8c709c7c1e20eea66e43bf0813edf",
+    "scripts/download_data.py": "a5dfbb88d092eb90918924f511151ef9c819c1cd0adac521bac60250134888af",
+    "scripts/finetune.py": "603347d364c68baeff4a2213bf75626f4dfed74ea4985e12698ab910a3f81618",
+    "scripts/finetune_field.py": "9b54bc7d4eca2fd382701e269a5e1b380ef92d84eafc69090185109a51351b6f",
+    "scripts/prepare_field_data.py": "9b22e9f61f2aab1c0ce753c9b20572e64d96acfff57ff414925496dd5c77de8f",
+    "tests/test_app.py": "ff1c7ab0e4a667dbead28830a74ef137c8c57681da4d17684a2ab9ed82202c3e",
+    "tests/test_field_data.py": "744b0006e93f1acc49d63668cf8b78bc817a63936361897e98e2afe2f1b712eb",
+    "Setup.ps1": "472c6c43cf4012c427be44e8e0ffed6114d6774623d1deace3e3c167af7519e4",
+    "Start-Platform.ps1": "421f5cdd982a7ac6fae0dd39883b58137eb31c9c39769b2e714cba89162e2eb2",
+    "Start-Platform.cmd": "70c02ce5ef17c08a73b4b52af710356c716dbff12f548044a5e72442b06d55a3",
+    "requirements-app.txt": "086c7dffe3e768237b2ed7ffbe5094bac3f26da49332d93d486bd6a7e615f5a4",
+    "static/app.js": "4c81d50b778c02caaf841831ba000e7e4e3296b5c8da9df6d013fb0eb594992b",
+    "static/index.html": "d6aadd60cbab6a6994c8a7dcc05e6fc3087211cc940162b63ea8f534e7ac3351",
+    "static/styles.css": "f9d40a194c560d564434e36166fd1c46e0c93ebdb533b877ce0e0800c3292718"
+  },
+  "code_hash_basis": "Git staged file bytes; Git text normalization may differ from local Windows line endings."
+}

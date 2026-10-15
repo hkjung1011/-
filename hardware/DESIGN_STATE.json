@@ -1,0 +1,10 @@
+{
+  "record_kind": "summary",
+  "record_date": "2026-10-15",
+  "source_file": "WaferInspectionPlatform_R01/hardware/DESIGN_STATE.json",
+  "source_sha256": "0e2c6edb86a03aa6498a60a3d139f1165d020fe21c076818ba8f5a13158536f1",
+  "status": "PRELIMINARY_NOT_FABRICATION",
+  "cad_generated": false,
+  "physical_device_validated": false,
+  "note": "Preliminary layout and component candidates. Optical conditions, physical wafer checks and fabrication validation remain pending."
+}
